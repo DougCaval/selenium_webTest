@@ -1,0 +1,1 @@
+{"uuid":"a4c90911-677e-454b-8b05-381a1a8991ad","name":"Cenario: Abrir google","children":["be470785-33f4-4271-9723-41988d730e07"],"befores":[],"afters":[{"name":"steps.BrowserSteps.fechar()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1774301343349,"stop":1774301343777}],"start":1774301335440,"stop":1774301343781}
