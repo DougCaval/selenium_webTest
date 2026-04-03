@@ -19,18 +19,18 @@ public class LogoutPage {
 
     public void fazerLogin() throws InterruptedException {
         driver.get("https://www.saucedemo.com");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(campoUsuario).sendKeys("standard_user");
         driver.findElement(campoSenha).sendKeys("secret_sauce");
         driver.findElement(botaoLogin).click();
-        Thread.sleep(2000);
+        Thread.sleep(1500);
     }
 
     public void realizarLogout() throws InterruptedException {
         driver.findElement(menuBurguer).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(botaoLogout).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public String obterUrlAtual() {

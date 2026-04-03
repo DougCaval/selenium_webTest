@@ -27,30 +27,30 @@ public class FluxoCompletoPage {
 
     public void fazerLogin() throws InterruptedException {
         driver.get("https://www.saucedemo.com");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(campoUsuario).sendKeys("standard_user");
         driver.findElement(campoSenha).sendKeys("secret_sauce");
         driver.findElement(botaoLogin).click();
-        Thread.sleep(2000);
+        Thread.sleep(1500);
     }
 
     public void adicionarUmProduto() throws InterruptedException {
         driver.findElement(adicionarProduto).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void adicionarMultiplosProdutos() throws InterruptedException {
         driver.findElement(adicionarProduto).click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         driver.findElement(adicionarProduto2).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void acessarCarrinhoEIniciarCheckout() throws InterruptedException {
         driver.findElement(iconeCarrinho).click();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         driver.findElement(botaoCheckout).click();
-        Thread.sleep(3000);
+        Thread.sleep(1500);
     }
 
     public void preencherDadosEntrega() throws InterruptedException {
@@ -58,9 +58,9 @@ public class FluxoCompletoPage {
         driver.findElement(campoSobrenome).sendKeys("QA");
         driver.findElement(campoCep).sendKeys("12345");
         driver.findElement(botaoContinuar).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(botaoFinalizar).click();
-        Thread.sleep(2000);
+        Thread.sleep(1500);
     }
 
     public String obterMensagemSucesso() {
