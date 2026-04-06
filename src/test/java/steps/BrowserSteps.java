@@ -1,3 +1,4 @@
+import pages.LoginPage;
 package steps;
 
 import io.cucumber.java.After;
@@ -47,3 +48,5 @@ public class BrowserSteps {
         DriverFactory.quit();
     }
 }
+import pages.LoginPage;
+
