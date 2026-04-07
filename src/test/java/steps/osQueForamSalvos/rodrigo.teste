@@ -1,0 +1,55 @@
+ package steps;
+
+ import io.cucumber.java.pt.*;
+ import org.junit.Assert;
+ import org.openqa.selenium.WebDriver;
+ import pages.LoginPage;
+ import utils.DriverFactory;
+
+ public class LoginSteps {
+
+     WebDriver driver;
+     LoginPage loginPage;
+
+     @Dado("que o usuário acessa o site")
+     public void acessarSite() {
+         driver = DriverFactory.getDriver();
+         loginPage = new LoginPage(driver);
+         loginPage.acessarSite();
+     }
+
+     @Quando("ele informa usuario {string} e senha {string}")
+     public void informarCredenciais(String usuario, String senha) {
+         loginPage.preencherUsuario(usuario);
+         loginPage.preencherSenha(senha);
+     }
+
+     @Quando("clica no botao login")
+     public void clicarLogin() {
+         loginPage.clicarLogin();
+     }
+
+     @Entao("deve acessar a pagina de produtos")
+     public void validarLoginSucesso() {
+         Assert.assertTrue(loginPage.estaNaPaginaProdutos());
+         driver.quit();
+     }
+
+     @Entao("deve exibir mensagem de erro")
+     public void validarErro() {
+         Assert.assertTrue(loginPage.obterMensagemErro().contains("Username and password do not match"));
+         driver.quit();
+     }
+
+     @Entao("deve exibir mensagem de usuario bloqueado")
+     public void validarUsuarioBloqueado() {
+         Assert.assertTrue(loginPage.obterMensagemErro().contains("locked out"));
+         driver.quit();
+     }
+
+     @Entao("deve exibir mensagem de campos obrigatorios")
+     public void validarCamposVazios() {
+         Assert.assertTrue(loginPage.obterMensagemErro().contains("Username is required"));
+         driver.quit();
+     }
+ }

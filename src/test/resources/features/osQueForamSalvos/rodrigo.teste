@@ -1,0 +1,24 @@
+Feature: Teste de Login no SauceDemo
+
+  Scenario: Login com usuário válido
+    Given que o usuário acessa o site
+    When ele informa usuario "standard_user" e senha "secret_sauce"
+    And clica no botao login
+    Then deve acessar a pagina de produtos
+
+  Scenario: Login com senha inválida
+    Given que o usuário acessa o site
+    When ele informa usuario "standard_user" e senha "senha_errada"
+    And clica no botao login
+    Then deve exibir mensagem de erro
+
+  Scenario: Login com usuário bloqueado
+    Given que o usuário acessa o site
+    When ele informa usuario "locked_out_user" e senha "secret_sauce"
+    And clica no botao login
+    Then deve exibir mensagem de usuario bloqueado
+
+  Scenario: Login com campos vazios
+    Given que o usuário acessa o site
+    When ele clica no botao login
+    Then deve exibir mensagem de campos obrigatorios
