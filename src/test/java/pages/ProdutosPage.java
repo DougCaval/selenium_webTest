@@ -43,15 +43,24 @@ public class ProdutosPage {
         Thread.sleep(1000);
     }
 
-    public double obterPrecoPrimeiroProduto() {
-        String preco = driver.findElements(By.className("inventory_item_price"))
-                .get(0).getText().replace("$", "");
-        return Double.parseDouble(preco);
+    public boolean primeiroProdutoEOMaisBarato() {
+        List<WebElement> precos = driver.findElements(By.className("inventory_item_price"));
+        double primeiroPreco = Double.parseDouble(precos.get(0).getText().replace("$", ""));
+        double menorPreco = precos.stream()
+                .mapToDouble(e -> Double.parseDouble(e.getText().replace("$", "")))
+                .min()
+                .orElse(Double.MAX_VALUE);
+        return primeiroPreco == menorPreco;
     }
 
-    public String obterNomePrimeiroProduto() {
-        return driver.findElements(By.className("inventory_item_name"))
-                .get(0).getText();
+    public boolean produtosEstaoOrdenadosAaZ() {
+        List<WebElement> nomes = driver.findElements(By.className("inventory_item_name"));
+        for (int i = 0; i < nomes.size() - 1; i++) {
+            String atual = nomes.get(i).getText().toLowerCase();
+            String proximo = nomes.get(i + 1).getText().toLowerCase();
+            if (atual.compareTo(proximo) > 0) return false;
+        }
+        return true;
     }
 
     public boolean todosProdutosTemNomePrecoEImagem() {

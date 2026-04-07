@@ -40,10 +40,8 @@ public class ProdutosStep {
     }
 
     @Entao("o primeiro produto deve ser o mais barato")
-    public void o_primeiro_produto_deve_ser_o_mais_barato() throws InterruptedException {
-        produtosPage.ordenarPorMenorPreco();
-        double primeiroPreco = produtosPage.obterPrecoPrimeiroProduto();
-        Assert.assertTrue(primeiroPreco <= 10.0);
+    public void o_primeiro_produto_deve_ser_o_mais_barato() {
+        Assert.assertTrue(produtosPage.primeiroProdutoEOMaisBarato());
     }
 
     @Quando("ele ordena de A a Z")
@@ -53,8 +51,7 @@ public class ProdutosStep {
 
     @Entao("o primeiro produto deve comecar com a letra A")
     public void o_primeiro_produto_deve_comecar_com_a_letra_A() {
-        String nome = produtosPage.obterNomePrimeiroProduto();
-        Assert.assertTrue(nome.startsWith("A") || nome.startsWith("a"));
+        Assert.assertTrue(produtosPage.produtosEstaoOrdenadosAaZ());
     }
 
     @Entao("todos os produtos devem ter nome preco e imagem")
