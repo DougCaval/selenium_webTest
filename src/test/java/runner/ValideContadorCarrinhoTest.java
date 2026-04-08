@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/xpto.feature",
+        features = "src/test/resources/features/carrinho.feature",
         glue = "steps",
-        plugin = {"pretty", "html:target/cucumber-report.html"},
+        plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         monochrome = true
 )
-public class ValideCarrinhoTest {
+public class ValideContadorCarrinhoTest {
 }
