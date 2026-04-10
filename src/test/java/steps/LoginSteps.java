@@ -1,10 +1,11 @@
  package steps;
 
+ import io.cucumber.java.After;
  import io.cucumber.java.pt.*;
  import org.junit.Assert;
  import org.openqa.selenium.WebDriver;
  import pages.LoginPage;
- import utils.DriverFactory;
+ import util.DriverFactory;
 
  public class LoginSteps {
 
@@ -32,24 +33,25 @@
      @Entao("deve acessar a pagina de produtos")
      public void validarLoginSucesso() {
          Assert.assertTrue(loginPage.estaNaPaginaProdutos());
-         driver.quit();
      }
 
      @Entao("deve exibir mensagem de erro")
      public void validarErro() {
          Assert.assertTrue(loginPage.obterMensagemErro().contains("Username and password do not match"));
-         driver.quit();
      }
 
      @Entao("deve exibir mensagem de usuario bloqueado")
      public void validarUsuarioBloqueado() {
          Assert.assertTrue(loginPage.obterMensagemErro().contains("locked out"));
-         driver.quit();
      }
 
      @Entao("deve exibir mensagem de campos obrigatorios")
      public void validarCamposVazios() {
          Assert.assertTrue(loginPage.obterMensagemErro().contains("Username is required"));
-         driver.quit();
+     }
+
+     @After
+     public void fechar() {
+         DriverFactory.quit();
      }
  }

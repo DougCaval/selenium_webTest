@@ -1,0 +1,1 @@
+{"uuid":"99d730e7-02a6-41fe-afcb-abd9fda78502","name":"Cenario: Login com senha inválida","children":["fdfad0bc-ba55-48bc-8c0f-75efb18604d4"],"befores":[],"afters":[{"name":"steps.LoginSteps.fechar()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1775863453115,"stop":1775863453277}],"start":1775863450231,"stop":1775863453278}

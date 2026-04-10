@@ -18,11 +18,17 @@ public class LoginPage {
 
     By adicionarProduto = By.id("add-to-cart-sauce-labs-backpack");
 
+    private By errorMessage = By.xpath("//h3[@data-test='error']");
+    private By productsTitle = By.xpath("//span[@class='title']");
+
     WebDriver driver;
 
-    public LoginPage(){
-
+    public LoginPage() {
         driver = DriverFactory.getDriver();
+    }
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
     }
 
 
@@ -64,7 +70,30 @@ public class LoginPage {
     public void adicionarProduto() throws InterruptedException {
         driver.findElement(adicionarProduto).click();
         Thread.sleep(5000);
+    }
 
+    public void acessarSite() {
+        driver.get("https://www.saucedemo.com/");
+    }
+
+    public void preencherUsuario(String user) {
+        driver.findElement(campoUsuario).sendKeys(user);
+    }
+
+    public void preencherSenha(String pass) {
+        driver.findElement(campoSenha).sendKeys(pass);
+    }
+
+    public void clicarLogin() {
+        driver.findElement(botaoLogin).click();
+    }
+
+    public String obterMensagemErro() {
+        return driver.findElement(errorMessage).getText();
+    }
+
+    public boolean estaNaPaginaProdutos() {
+        return driver.findElement(productsTitle).isDisplayed();
     }
 
 }
