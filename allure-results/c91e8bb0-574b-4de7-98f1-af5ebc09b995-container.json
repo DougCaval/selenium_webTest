@@ -1,0 +1,1 @@
+{"uuid":"c91e8bb0-574b-4de7-98f1-af5ebc09b995","name":"Cenario: Login com usuário bloqueado","children":["48f59355-c2e8-4ea3-8400-1d0bf8706152"],"befores":[],"afters":[{"name":"steps.LoginSteps.fechar()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1775863457160,"stop":1775863457326}],"start":1775863453286,"stop":1775863457326}
