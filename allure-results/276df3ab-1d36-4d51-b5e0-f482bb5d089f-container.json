@@ -1,1 +1,0 @@
-{"uuid":"276df3ab-1d36-4d51-b5e0-f482bb5d089f","name":"Cenario: Login com usuário válido","children":["395bbf1d-58ed-4c57-9e09-86811f54d4a8"],"befores":[],"afters":[{"name":"steps.LoginSteps.fechar()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1775863449965,"stop":1775863450123}],"start":1775863447064,"stop":1775863450126}

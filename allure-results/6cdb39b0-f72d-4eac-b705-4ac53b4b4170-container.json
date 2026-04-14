@@ -1,1 +1,0 @@
-{"uuid":"6cdb39b0-f72d-4eac-b705-4ac53b4b4170","name":"Cenario: Login com campos vazios","children":["1de0694d-3d78-435d-8794-6466502f4030"],"befores":[],"afters":[{"name":"steps.LoginSteps.fechar()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1775863459335,"stop":1775863459487}],"start":1775863457334,"stop":1775863459487}
