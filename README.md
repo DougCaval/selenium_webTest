@@ -4,6 +4,10 @@ mvn clean test
 # Para gerar os reportes Allure
 allure serve allure-results
 
+# Gerar o relatório HTML
+allure generate allure-results --clean -o allure-report
+# Abrir o relatório no navegador
+allure open allure-report
 
 # Exercício  para quinta feira 
 
