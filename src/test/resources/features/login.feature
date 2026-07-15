@@ -23,3 +23,6 @@ match any user in this service"
         Então o sistema não deve permitir o acesso
         E deve exibir uma mensagem informando que o campo usuário é obrigatório
         E deve permanecer na tela de login.
+
+       Cenário:
+ 
