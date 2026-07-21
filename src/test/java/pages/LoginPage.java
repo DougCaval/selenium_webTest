@@ -22,6 +22,8 @@ public class LoginPage {
     By last_name = By.id("last-name");
     By postal_code = By.id("postal-code");
     By botaoFinish = By.id("finish");
+    By botaoCancel = By.id("cancel");
+    By botaoFirstName = By.id("first-name");
 
 
     WebDriver driver;
