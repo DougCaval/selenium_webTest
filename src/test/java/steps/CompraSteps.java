@@ -3,6 +3,8 @@ package steps;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Quando;
 import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -54,22 +56,24 @@ public void mensagem_erro(String mensagemEsperada) {
     }
 
     @Dado("que o usuario esta em na tela de login")
-    public void queOUsuarioEstaNaTelaDeLogin() {
-
+    public void queOUsuarioEstaNaTelaDeLogin() throws InterruptedException {
+        loginPage.realizarLogin();
     }
 
     @E("informa usuario e senha valido")
-    public void informaUsuarioESenhaValido() {
+    public void informaUsuarioESenhaValido() throws InterruptedException{
+        loginPage.inserirDados();
+    }
+
+    @Quando("clicar no botao Login")
+    public void clicarNoBotaoEntrar() throws InterruptedException{
+        loginPage.inserirDados();
 
     }
 
-    @Quando("clicar no botão {string}")
-    public void clicarNoBotaoEntrar(String botao) {
-
-    }
-
-    @Então("o sistema deve permitir o acesso do usuario")
-    public void oSistemaDevePermitirOAcessoDoUsuario() {
+    @Entao("o sistema deve permitir o acesso do usuario")
+    public void oSistemaDevePermitirOAcessoDoUsuario() throws InterruptedException{
+        loginPage.inserirDados();
 
     }
 
@@ -89,7 +93,7 @@ public void mensagem_erro(String mensagemEsperada) {
 
     }
 
-    @Então("o sistema não deve permitir o acesso")
+    @Entao("o sistema não deve permitir o acesso")
     public void oSistemaNaoDevePermitirOAcesso() {
 
     }
