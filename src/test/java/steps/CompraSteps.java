@@ -53,7 +53,77 @@ public void mensagem_erro(String mensagemEsperada) {
         loginPage.cliqueEmFinish();
     }
 
+    @Dado("que o usuario esta em na tela de login")
+    public void queOUsuarioEstaNaTelaDeLogin() {
 
+    }
+
+    @E("informa usuario e senha valido")
+    public void informaUsuarioESenhaValido() {
+
+    }
+
+    @Quando("clicar no botão {string}")
+    public void clicarNoBotaoEntrar(String botao) {
+
+    }
+
+    @Então("o sistema deve permitir o acesso do usuario")
+    public void oSistemaDevePermitirOAcessoDoUsuario() {
+
+    }
+
+
+    @Dado("que o usuário acessou a tela de login")
+    public void queOUsuarioAcessouATelaDeLogin() {
+
+    }
+
+    @E("informa um usuário válido")
+    public void informaUmUsuarioValido() {
+
+    }
+
+    @E("informa uma senha incorreta")
+    public void informaUmaSenhaIncorreta() {
+
+    }
+
+    @Então("o sistema não deve permitir o acesso")
+    public void oSistemaNaoDevePermitirOAcesso() {
+
+    }
+
+    @E("deve exibir a mensagem {string}")
+    public void deveExibirAMensagem(String mensagem) {
+
+    }
+
+
+    @Dado("que o usuário está na tela de login")
+    public void queOUsuarioEstaNaTelaDeLoginSenha() {
+
+    }
+
+    @E("informa uma senha válida")
+    public void informaUmaSenhaValida() {
+
+    }
+
+    @E("deixa o campo usuário em branco")
+    public void deixaOCampoUsuarioEmBranco() {
+
+    }
+
+    @E("deve exibir uma mensagem informando que o campo usuário é obrigatório")
+    public void deveExibirUmaMensagemInformandoQueOCampoUsuarioEObrigatorio() {
+
+    }
+
+    @E("deve permanecer na tela de login")
+    public void devePermanecerNaTelaDeLogin() {
+
+    }
 
 @After
 public void fechar(){
