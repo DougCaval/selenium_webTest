@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+### Allure Reports ###
+allure-results/
+allure-report/
+### Copia local do projeto ###
+/selenium_webTest/
