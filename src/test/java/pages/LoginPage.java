@@ -65,7 +65,18 @@ public class LoginPage {
         Thread.sleep(5000);
 
     }
-
+public void preencherLogin(String usuario, String senha) {
+    driver.findElement(campoUsuario).sendKeys(usuario);
+    driver.findElement(campoSenha).sendKeys(senha);
+}
+public void clicarLogin() {
+    driver.findElement(botaoLogin).click();
+}
+public boolean loginFoiRealizado() {
+    return driver.findElement(By.className("title"))
+                 .getText()
+                 .equals("Products");
+}
     public void adicionarProduto() throws InterruptedException {
         driver.findElement(adicionarProduto).click();
         Thread.sleep(5000);
