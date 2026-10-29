@@ -66,16 +66,24 @@ public class LoginPage {
 
     }
 public void preencherLogin(String usuario, String senha) {
+    driver.findElement(campoUsuario).clear();
     driver.findElement(campoUsuario).sendKeys(usuario);
+
+    driver.findElement(campoSenha).clear();
     driver.findElement(campoSenha).sendKeys(senha);
 }
 public void clicarLogin() {
     driver.findElement(botaoLogin).click();
 }
 public boolean loginFoiRealizado() {
-    return driver.findElement(By.className("title"))
-                 .getText()
-                 .equals("Products");
+    return !driver.findElements(By.className("title")).isEmpty()
+        && driver.findElement(By.className("title"))
+                 .getText().equals("Products");
+}
+public String obterMensagemErro() {
+    return driver.findElement(
+        By.cssSelector("[data-test='error']")
+    ).getText();
 }
     public void adicionarProduto() throws InterruptedException {
         driver.findElement(adicionarProduto).click();
